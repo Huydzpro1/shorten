@@ -1,37 +1,86 @@
-<!--
-
-###############################
-* CREATED BY Hak9             *
-* xHak9x                      *
-###############################
-
--->
 <!DOCTYPE html>
-<html>
-<head>
-	<title>URL Shortener - Hak9</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Freckle+Face" rel="stylesheet">
-	<link rel="icon" href="icon.png">
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<form action="" method="post">
-	<div id="container">
-		<center>
-				<h1 id="Hak9"><span style="color: #fff;font-size: 40px;">Hak</span>9</h1>
-				<a href="https://github.com/xHak9x" target="blank"><p id="stay">Stay Tuned</p><img src="github.png" id="img" alt=""></a>
-				<h1 class="title">Shorten or hide your link to an unique and small one.</h1>
-		    	<input type="text" name="url" id="url" class="url" placeholder="Paste a link to shorten it">
-				<button name="btn" id="btn" onclick="return false"><span id="revert">SHORTEN</span></button>
-				<button name="btn" id="close" onclick="return false"><span id="Xclose">X</span></button>
-				<footer>Hak9 All rights reserved.</footer>
-		</center>
-	</div>
-</form>
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="hak9.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <script src="redirect.js"></script>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="Slash is an Open-Source minimilastic URL shortner focusing on privacy."
+    />
+    <meta name="author" content="Sumit kolhe" />
+    <meta property="og:site_name" content="Reduced" />
+    <!-- website name -->
+    <meta property="og:site" content="https://url.sumit.codes" />
+    <!-- website link -->
+    <meta property="og:title" content="" />
+    <!-- title shown in the actual shared post -->
+    <meta property="og:description" content="" />
+    <!-- description shown in the actual shared post -->
+    <meta property="og:image" content="" />
+    <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content="" />
+    <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article" />
+
+    <title>Slash | Open-source free URL shortener</title>
+
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-clipboard2/0.3.1/vue-clipboard.min.js"></script>
+  </head>
+
+  <body>
+    <main class="container" id="app">
+      <header>
+        <h1>S/ASH</h1>
+      </header>
+      <form onSubmit="return false;">
+        <input
+          type="text"
+          class="textbox"
+          v-on:keyup.enter="checkUrl"
+          v-bind:class="{badurl:badurl}"
+          :placeholder="urlplaceholder"
+          v-model="url"
+        />
+        <input
+          type="text"
+          class="alias"
+          v-bind:class="{badalias:badalias}"
+          :placeholder="aliasplaceholder"
+          v-model="alias"
+        />
+        <button v-on:click="checkUrl">{{buttontext}}</button>
+      </form>
+      <div class="shorturl">
+        <p class="shorturlfield" id="copyto" v-if="stored!=null">
+          {{stored}}
+        </p>
+        <button
+          class="copybutton"
+          v-if="stored!=null"
+          v-clipboard:copy="stored"
+          v-clipboard:success="onCopy"
+        >
+          Copy
+        </button>
+
+        <div id="toast">Link copied</div>
+      </div>
+    </main>
+
+    <script src="short.js"></script>
+    <script></script>
+  </body>
 </html>
