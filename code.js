@@ -7,9 +7,9 @@ app.use(express.static("public"));
 app.use(express.json());
 
 const con = mysql.createConnection({
-	host:"localhost",
+	host:"shorten-bv0.pages.dev",
 	user:"root",
-	password:"password@123",
+	password:"root",
 	database:"shorturls"
 });
 con.connect(function(error){
@@ -19,7 +19,7 @@ con.connect(function(error){
 })
 
 app.get("/",function(request,response){
-	response.sendFile(__dirname + "/public/index.html");
+	response.sendFile(__dirname + "/index.html");
 });
 
 app.post("/api/create-short-url",function(request,response){
