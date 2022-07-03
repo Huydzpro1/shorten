@@ -51,7 +51,7 @@ const urlContainer = document.querySelector('.url-container')
    test.innerText = `alsjhdakljdhaksjdhakwjhd`
 
 const createShortUrl = async (errMsg) => {
- const res = await fetch(`https://api.shrtco.de/v2/shorten?url=1slink.xyz/very/long/link.html}`)
+ const res = await fetch(`https://1slink.xyz/v2/shorten.json}`)
  const data = await res.json()
 //  console.log(data)
  try {
