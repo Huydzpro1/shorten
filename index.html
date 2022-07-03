@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>URL Shortener | Devnotes</title>
-  <link rel="stylesheet" href="./styles.css" />
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Shortener</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h3 class="title">ShortenURL | <a href="http://haodev.wordpress.com/" target="_blank">DevNotes</a></h3>
-  <div class="main">
-    <input type="url" id="txtUrl">
-    <button type="submit" onclick="shortenUrl()">Get my shorten link</button>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="./main.js"></script>
+<div class="wrapper">
+<h1>URL Shortener</h1>
+<form id="form">
+<input id="link" type="text" placeholder="Enter your link">
+<input type="submit" value="shorten it!">
+</form>
+<ul id="parent" class="shortLinks">
+</ul>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
