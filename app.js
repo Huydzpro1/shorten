@@ -51,7 +51,7 @@ const urlContainer = document.querySelector('.url-container')
    test.innerText = `alsjhdakljdhaksjdhakwjhd`
 
 const createShortUrl = async (errMsg) => {
- const res = await fetch(`https://link1s.com/api?api=e59986ec6aedad92215df617717d6c4f6e4d363f&url=yourdestinationlink.com&alias=CustomAlias}`)
+ const res = await fetch(`https://link1s.com/api?api=e59986ec6aedad92215df617717d6c4f6e4d363f&url=yourdestinationlink.com&alias=CustomAlias&format=text}`)
  const data = await res.json()
 //  console.log(data)
  try {
@@ -109,7 +109,7 @@ urlContainer.addEventListener('click', (e) => {
 // GETTING LOCALLY STORED LINKS 
 const loadingLinks =  async(links) =>{
    links.forEach(async (link) => {
-      const res = await fetch(`https://link1s.com/api?api=e59986ec6aedad92215df617717d6c4f6e4d363f&url=yourdestinationlink.com&alias=CustomAlias&format=text}`)
+      const res = await fetch(`https://api.shrtco.de/v2/info?code=${link}`)
       const data = await res.json()
       console.log(data)
       try {
