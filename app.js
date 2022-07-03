@@ -51,7 +51,7 @@ const urlContainer = document.querySelector('.url-container')
    test.innerText = `alsjhdakljdhaksjdhakwjhd`
 
 const createShortUrl = async (errMsg) => {
- const res = await fetch(`https://link1s.com/api?api=e59986ec6aedad92215df617717d6c4f6e4d363f&url=yourdestinationlink.com&alias=CustomAlias&format=text}`)
+ const res = await fetch(`https://1slink.xyz/v2/shorten.json`)
  const data = await res.json()
 //  console.log(data)
  try {
@@ -116,7 +116,7 @@ const loadingLinks =  async(links) =>{
          const card = document.createElement('div')
          card.innerHTML = `<p class="long-url"><a href="${data.result.url}" target="_blank">${data.result.url}</a></p>
          <hr>
-         <p class="short-url"><a href="link1s.com/${data.result.code}" target="_blank">link1s.com/${data.result.code}</a></p>
+         <p class="short-url"><a href="1slink.xyz/${data.result.code}" target="_blank">1slink.xyz/${data.result.code}</a></p>
          <button class="copy-btn">Copy</button>`
          card.className = "card"
          urlContainer.appendChild(card)
